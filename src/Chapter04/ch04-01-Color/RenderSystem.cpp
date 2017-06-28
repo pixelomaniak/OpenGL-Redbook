@@ -7,6 +7,7 @@ namespace byhj
 void RenderSystem::v_InitInfo()
 {
 	windowInfo.title += "ch01-01-Triangle";
+	glfwWindowHint(GLFW_SAMPLES, 4);
 }
 
 void RenderSystem::v_Init()
@@ -27,5 +28,19 @@ void RenderSystem::v_Shutdown()
 	m_Triangle.Shutdown();
 }
 
+void RenderSystem::v_KeyCallback(GLFWwindow* Triangle, int key, int scancode, int action, int mode)
+{
+	App::v_KeyCallback(Triangle, key, scancode, action, mode);
+	if (key == GLFW_KEY_E && action == GLFW_PRESS)
+	{
+		m_Triangle.SetAAEnabled(true);
+		std::cout << "Enabled AA\n";
+	}
+	if (key == GLFW_KEY_D && action == GLFW_PRESS)
+	{
+		m_Triangle.SetAAEnabled(false);
+		std::cout << "Disabled AA\n";
+	}
+}
 
 }

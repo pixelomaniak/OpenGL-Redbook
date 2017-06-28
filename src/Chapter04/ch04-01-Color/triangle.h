@@ -19,7 +19,7 @@ namespace byhj
 		void Init();
 		void Render();
 		void Shutdown();
-
+		void SetAAEnabled(bool State);
 
 	private:
 		void init_shader();

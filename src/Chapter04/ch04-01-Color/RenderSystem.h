@@ -20,6 +20,7 @@ public:
 	void v_Init()     override;
 	void v_Render()   override;
 	void v_Shutdown() override;
+	virtual void v_KeyCallback(GLFWwindow* Triangle, int key, int scancode, int action, int mode) override;
 
 private:
 

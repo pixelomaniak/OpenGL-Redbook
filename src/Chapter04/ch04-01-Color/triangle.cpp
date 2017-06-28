@@ -28,7 +28,13 @@ void Triangle::Shutdown()
 	glDeleteBuffers(1, &vbo);
 }
 
-
+void Triangle::SetAAEnabled(bool State)
+{
+	if (State)
+		glEnable(GL_MULTISAMPLE);
+	else
+		glDisable(GL_MULTISAMPLE);
+}
 
 void Triangle::init_shader()
 {
